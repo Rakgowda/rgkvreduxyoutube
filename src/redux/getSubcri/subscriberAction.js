@@ -38,7 +38,7 @@ const fetchSub= ()=>{
     return (dispatch)=>{
         dispatch(fetchsubRequest)
         axios
-        .get('https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCnw-TdFO6KgTWTxBatPWDMw&key=AIzaSyDgrPBx3AMpJFPKlx5MkmkkLw7OaIBcrQU')
+        .get('wss://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCnw-TdFO6KgTWTxBatPWDMw&key=AIzaSyDgrPBx3AMpJFPKlx5MkmkkLw7OaIBcrQU')
         .then(response =>{
                 const sub = response.data
                 dispatch(fetchsubSucess(sub))
