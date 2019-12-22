@@ -39,7 +39,7 @@ export const fetchUrl = ()=>{
     return (dispatch)=>{
         dispatch(fetchUserRequest)
         axios
-        .get('wss://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=UUnw-TdFO6KgTWTxBatPWDMw&key=AIzaSyDgrPBx3AMpJFPKlx5MkmkkLw7OaIBcrQU')
+        .get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=UUnw-TdFO6KgTWTxBatPWDMw&key=AIzaSyDgrPBx3AMpJFPKlx5MkmkkLw7OaIBcrQU')
         .then(response =>{
                 const user = response.data
                 dispatch(fetchUserSucess(user))
