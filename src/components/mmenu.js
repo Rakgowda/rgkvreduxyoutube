@@ -37,11 +37,12 @@ const Mmenu=(props) =>{
         <CardActionArea >
         <CardMedia
           className={classes.media}
-          component="iframe"
-          src={props.videolink}
-          title="Contemplative Reptile"
-          style={{border:"1px solid transparent"}}
-        />
+          
+        >
+<iframe id="vid" src={props.videolink} style={{height:"500px"}} allowFullScreen>
+
+         </iframe>
+</CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {props.titile}
