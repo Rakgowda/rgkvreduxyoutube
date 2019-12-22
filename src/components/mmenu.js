@@ -39,7 +39,7 @@ const Mmenu=(props) =>{
           className={classes.media}
           
         >
-<iframe id="vid" src={props.videolink} style={{height:"500px"}} allowFullScreen>
+<iframe id="vid" src={props.videolink} style={{height:"500px",width:"500px"}} allowFullScreen>
 
          </iframe>
 </CardMedia>
