@@ -24,6 +24,8 @@ const useStyles = makeStyles(theme => ({
   },
   menu:{
       backgroundColor:"rgb(253, 142, 10)",
+      marginBottom:"1rem",
+     
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -83,7 +85,7 @@ function Menu(){
 
     return (
         <div className={classes.root}>
-        <AppBar position="static" className={classes.menu}>
+        <AppBar position="static" className={classes.menu} >
           <Toolbar>
             
             <Typography variant="h4" className={classes.title}>

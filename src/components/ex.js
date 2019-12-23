@@ -13,6 +13,7 @@ import GridListTile from '@material-ui/core/GridListTile';
 import Skeleton from '@material-ui/lab/Skeleton';
 import Menu from './menu'
 import Mmenu from './mmenu'
+import Footer from "./footer"
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -61,7 +62,7 @@ function Ex({userData,fetchUrl})  {
             
               <div>
               <Menu></Menu>
-              <Container maxWidth="lg">
+              <Container maxWidth="xl">
              
         <Typography component="div" >
 
@@ -121,6 +122,7 @@ userData.data["items"].map(r=><p>{r["snippet"]["title"]}</p>)
                
            
               </div>
+      <Footer></Footer>
             </div>
           )
       

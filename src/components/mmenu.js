@@ -37,7 +37,7 @@ const Mmenu=(props) =>{
         <CardActionArea >
         <CardMedia>
 
-          <iframe src={props.videolink} className="embed-responsive-item" frameborder="0" style={{border:"1px solid transparent",height:"45vw",width:"100%"}}  allowFullScreen></iframe>
+          <iframe src={props.videolink} frameborder="0" style={{border:"1px solid transparent",height:"45vw",width:"100%"}}  allowFullScreen></iframe>
         </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
