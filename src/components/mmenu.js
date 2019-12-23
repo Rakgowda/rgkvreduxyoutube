@@ -47,7 +47,7 @@ const Mmenu=(props) =>{
         </CardContent>
       </CardActionArea>
       <CardActions>
-          <Button size="small" color="primary">
+          <Button size="small" color="primary" href="whatsapp://send?text={props.videolink}" data-action="share/whatsapp/share">
             Share
           </Button>
           <Button size="small" color="secondary">
