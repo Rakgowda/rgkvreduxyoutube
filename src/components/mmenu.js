@@ -25,14 +25,6 @@ const useStyles = makeStyles(theme => ({
       maxWidth: 600,
       
     },
-u:{
-position: "absolute",
-  top: 0,
-  left: 0,
-  width: "100%",
-  height: "100%",
-  "pointer-events": "none"
-}
   }));
  
 const Mmenu=(props) =>{
@@ -43,14 +35,10 @@ const Mmenu=(props) =>{
      
         <Card className="mb-4">
         <CardActionArea >
-        <CardMedia
-          className={classes.media}
-          
-        >
-<iframe id="vid" src={props.videolink} className={classes.u} className="embed-responsive-item" style={{height:"500px"}} allowFullScreen>
+        <CardMedia>
 
-         </iframe>
-</CardMedia>
+          <iframe src={props.videolink} className="embed-responsive-item" frameborder="0" style={{border:"1px solid transparent",height:"45vw",width:"100%"}}  allowFullScreen></iframe>
+        </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {props.titile}
