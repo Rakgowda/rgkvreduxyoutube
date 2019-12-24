@@ -96,7 +96,7 @@ function Menu(){
             <Typography variant="h3" className={classes.subc}>
               {subcridata.loading ?( <div><Skeleton variant="text" width="100px"/></div>):subcridata.error ? (
         <h2>{subcridata.error}</h2>
-      ) : <CountUp end={subcridata.data["items"][0]["statistics"]["subscriberCount"]} />}
+      ) : <CountUp end={subcridata.data["items"][0]["statistics"]["subscriberCount"]} duration={2.75}/>}
               <Typography variant="h6" style={{color:"black",marginLeft:"-30px","font-weight": 300,"font-style": "normal"}}>
               Subscribers<YouTubeIcon style={{color:"red",fontSize:"2rem"}}>youtube</YouTubeIcon>
             </Typography>
