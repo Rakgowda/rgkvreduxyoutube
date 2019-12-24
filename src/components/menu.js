@@ -18,6 +18,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import {useSelector,useDispatch} from "react-redux"
 import fetchSub from "../redux/getSubcri/subscriberAction"
 import Skeleton from '@material-ui/lab/Skeleton';
+import CountUp from 'react-countup';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -95,7 +96,7 @@ function Menu(){
             <Typography variant="h3" className={classes.subc}>
               {subcridata.loading ?( <div><Skeleton variant="text" width="100px"/></div>):subcridata.error ? (
         <h2>{subcridata.error}</h2>
-      ) : subcridata.data["items"][0]["statistics"]["subscriberCount"]}
+      ) : <CountUp end={subcridata.data["items"][0]["statistics"]["subscriberCount"]} />}
               <Typography variant="h6" style={{color:"black",marginLeft:"-30px","font-weight": 300,"font-style": "normal"}}>
               Subscribers<YouTubeIcon style={{color:"red",fontSize:"2rem"}}>youtube</YouTubeIcon>
             </Typography>
