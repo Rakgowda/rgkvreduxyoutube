@@ -19,6 +19,8 @@ import {useSelector,useDispatch} from "react-redux"
 import fetchSub from "../redux/getSubcri/subscriberAction"
 import Skeleton from '@material-ui/lab/Skeleton';
 import CountUp from 'react-countup';
+
+import SwipeDrawer from './swipeDrawer'
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -61,7 +63,8 @@ const useStyles = makeStyles(theme => ({
       width:"300px",
       height:"300px",
       margin:"auto"
-  }
+  },
+ 
 }));
 
 function Menu(){
@@ -90,7 +93,7 @@ function Menu(){
           <Toolbar>
             
             <Typography variant="h4" className={classes.title}>
-              RGKV
+              <SwipeDrawer></SwipeDrawer>
               
             </Typography>
             <Typography variant="h3" className={classes.subc}>
@@ -101,7 +104,7 @@ function Menu(){
               Subscribers<YouTubeIcon style={{color:"red",fontSize:"2rem"}}>youtube</YouTubeIcon>
             </Typography>
             </Typography>
-            <Avatar alt="Remy Sharp" src={logo}  className={classes.medium} onClick={handleClickOpen}/>
+            <Avatar alt="RGKV" src={logo}  className={classes.medium} onClick={handleClickOpen}/>
           </Toolbar>
         </AppBar>
         <Dialog
