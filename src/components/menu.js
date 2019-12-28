@@ -118,8 +118,7 @@ function Menu(){
               RGKV
               
             </Typography>
-              Let Google help apps determine location. This means sending anonymous location data to
-              Google, even when no apps are running.
+              RGKV kannada youtube video creator haagu part time web developer.
               
             </DialogContentText>
           </DialogContent>
