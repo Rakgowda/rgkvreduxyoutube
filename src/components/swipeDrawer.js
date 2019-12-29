@@ -42,14 +42,22 @@ background: "linear-gradient(to right, #ffb75e, #ed8f03)", /* W3C, IE 10+/ Edge,
         justifyContent:"center",
     marginBottom:"1rem",
     marginTop:"1rem"
+  },
+  listhover:{
+    "&:hover":{
+      backgroundColor:"transparent",
+      color:"black"
+    }
   }
 }));
 
 export default function SwipeDrawer() {
     const classes = useStyles();
     const [state, setState] = React.useState({
-    
-      left: false
+        top: false,
+        left: false,
+        bottom: false,
+        right: false,
     });
   
     const toggleDrawer = (side, open) => event => {
@@ -71,19 +79,24 @@ export default function SwipeDrawer() {
          <Divider />
 
         <List>
-          {['Home', 'Youtube Link'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <HomeIcon /> : <YouTubeIcon />}</ListItemIcon>
-              <ListItemText primary={text} className={classes.liststyle} />
+         
+
+<ListItem button key={"Home"} className={classes.listhover} component="a" href="https://www.youtube.com/channel/UCnw-TdFO6KgTWTxBatPWDMw?view_as=subscriber" >
+              <ListItemIcon><HomeIcon></HomeIcon></ListItemIcon>
+              <ListItemText primary={"Home"} className={classes.liststyle} />
             </ListItem>
-          ))}
+
+<ListItem button key={"YT"} className={classes.listhover} component="a" href="https://www.youtube.com/channel/UCnw-TdFO6KgTWTxBatPWDMw?view_as=subscriber" >
+              <ListItemIcon><YouTubeIcon></YouTubeIcon></ListItemIcon>
+              <ListItemText primary={"Youtube Link"} className={classes.liststyle} />
+            </ListItem>
         </List>
         <Divider />
         <List>
           {['Feedback'].map((text, index) => (
-            <ListItem button key={text}>
+            <ListItem button key={text} className={classes.listhover} component="a" href="mailto:rakshithgowdakv@gmail.com?subject=RGKV react feedback">
               <ListItemIcon><FeedbackIcon></FeedbackIcon></ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={text}></ListItemText>
             </ListItem>
           ))}
         </List>
