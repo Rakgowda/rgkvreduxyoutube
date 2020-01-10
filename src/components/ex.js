@@ -61,7 +61,7 @@ function Ex({userData,fetchUrl})  {
             <div>
             
               <div>
-              <Menu></Menu>
+              
               <Container maxWidth="xl">
              
         <Typography component="div" >
