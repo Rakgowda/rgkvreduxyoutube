@@ -58,8 +58,9 @@ function Ex({userData,fetchUrl})  {
           ) : userData.error ? (
             <h2>{userData.error}</h2>
           ) : (
-            <div>
             
+            <div>
+             <Menu></Menu>
               <div>
               
               <Container maxWidth="xl">
@@ -77,45 +78,12 @@ userData.data["items"].map(r=><p>{r["snippet"]["title"]}</p>)
       {userData.data["items"].map(ee => (
 
       <Mmenu key={ee["id"]} youtubelink={"https://www.youtube.com/watch/"+ee["snippet"]["resourceId"]["videoId"]} videolink={"https://www.youtube.com/embed/"+ee["snippet"]["resourceId"]["videoId"]+"?rel=0"} titile={ee["snippet"]["title"]}></Mmenu>
-  //     <Card className="m-2">
-  //     <CardActionArea >
-  //     <CardMedia
-  //       className={classes.media}
-  //       component="iframe"
-  //       src={"https://www.youtube.com/embed/"+ee["snippet"]["resourceId"]["videoId"]+"?rel=0"}
-  //       title="Contemplative Reptile"
-  //     />
-  //     <CardContent>
-  //       <Typography gutterBottom variant="h5" component="h2">
-  //         {ee["snippet"]["title"]}
-  //       </Typography>
-        
-  //     </CardContent>
-  //   </CardActionArea>
-  //   <CardActions>
-  //       <Button size="small" color="primary">
-  //         Share
-  //       </Button>
-  //       <Button size="small" color="secondary">
-  //         Youtube link
-  //       </Button>
-  //     </CardActions>
-  //  </Card>
-
+ 
 
           )
           )}
      
-  
 
-
-{/* <GridList cellHeight={160} className={classes.gridList} cols={3}>
-        {userData.data["items"].map(tile => (
-          <GridListTile key={tile["snippet"]["thumbnails"]["maxres"]["url"]} cols="1">
-            <img src={tile["snippet"]["thumbnails"]["maxres"]["url"]} alt={tile["snippet"]["thumbnails"]["maxres"]["url"]} />
-          </GridListTile>
-        ))}
-      </GridList> */}
       
         </Typography>
       </Container>

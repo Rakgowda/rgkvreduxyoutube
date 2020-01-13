@@ -15,6 +15,9 @@ import HomeIcon from '@material-ui/icons/Home';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import FeedbackIcon from '@material-ui/icons/Feedback';
 import Box from '@material-ui/core/Box';
+import LocalConvenienceStoreIcon from '@material-ui/icons/LocalConvenienceStore';
+
+import {Link} from "react-router-dom"
 const useStyles = makeStyles(theme=>({
   list: {
     width: 250
@@ -47,6 +50,15 @@ background: "linear-gradient(to right, #ffb75e, #ed8f03)", /* W3C, IE 10+/ Edge,
     "&:hover":{
       backgroundColor:"transparent",
       color:"black"
+    }
+  },
+  link:{
+    color:"black",
+    textDecoration:"none",
+    "&:hover":{
+      backgroundColor:"transparent",
+      color:"black",
+      textDecoration:"none",
     }
   }
 }));
@@ -81,11 +93,15 @@ export default function SwipeDrawer() {
         <List>
          
 
-<ListItem button key={"Home"} className={classes.listhover} component="a" href="https://www.youtube.com/channel/UCnw-TdFO6KgTWTxBatPWDMw?view_as=subscriber" >
+<ListItem button key={"Home"} className={classes.listhover} >
               <ListItemIcon><HomeIcon></HomeIcon></ListItemIcon>
-              <ListItemText primary={"Home"} className={classes.liststyle} />
+              <Link className={classes.link} to="/"><ListItemText primary={"Home"} className={classes.liststyle} /></Link>
             </ListItem>
-
+            <ListItem button key={"News"} className={classes.listhover}>
+              <ListItemIcon><LocalConvenienceStoreIcon></LocalConvenienceStoreIcon></ListItemIcon>
+              <Link className={classes.link} to="/news"> <ListItemText primary={"News"} className={classes.liststyle} /></Link>
+              
+            </ListItem>
 <ListItem button key={"YT"} className={classes.listhover} component="a" href="https://www.youtube.com/channel/UCnw-TdFO6KgTWTxBatPWDMw?view_as=subscriber" >
               <ListItemIcon><YouTubeIcon></YouTubeIcon></ListItemIcon>
               <ListItemText primary={"Youtube Link"} className={classes.liststyle} />
