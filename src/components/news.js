@@ -13,6 +13,9 @@ import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
 import SportsCricketIcon from '@material-ui/icons/SportsCricket';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import HomeIcon from '@material-ui/icons/Home';
+
+import AllNews from './allNews'
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -54,7 +57,7 @@ const useStyles = makeStyles(theme => ({
 export default function News() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-
+  
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -79,7 +82,7 @@ export default function News() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Item One
+      <AllNews></AllNews>
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two

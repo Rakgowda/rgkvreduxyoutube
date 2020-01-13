@@ -1,0 +1,3 @@
+export const NEWS_FETCH_DATA = "NEWS_FETCH_DATA";
+export const NEWS_FETCH_SUCCESS = "NEWS_FETCH_SUCCESS";
+export const NEWS_FETCH_ERR = "NEWS_FETCH_ERR";
