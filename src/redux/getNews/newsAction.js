@@ -12,7 +12,7 @@ export const fetchnewsRequest=()=>{
 }
 
 export const fetchnewsSucess=newsdata=>{
-
+   
     return {
         type:news.NEWS_FETCH_SUCCESS,
         payload:newsdata
@@ -31,15 +31,17 @@ export const fetchnewsError=(errData)=>{
 }
 
 
-const fetchNews= (category)=>{
+const fetchNews= (category,page)=>{
 
     return (dispatch)=>{
         dispatch(fetchnewsRequest)
         axios
-        .get('https://newsapi.org/v2/top-headlines?country=in&apiKey=ca7d50b835c14c3bb800898d1f2e91c0&category='+category)
+        .get('https://newsapi.org/v2/top-headlines?country=in&apiKey=ca7d50b835c14c3bb800898d1f2e91c0&pageSize=5&category='+category+'&page='+page)
         .then(response =>{
-                const news = response.data
+                const news = response.data["articles"]
+                console.log(news)
                 dispatch(fetchnewsSucess(news))
+                
             } )
         .catch(
                 err=>{
@@ -49,4 +51,6 @@ const fetchNews= (category)=>{
             )
     }
 }
-export default fetchNews
+
+
+export default fetchNews;

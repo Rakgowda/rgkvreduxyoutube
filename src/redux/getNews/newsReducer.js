@@ -24,10 +24,11 @@ const newsreducer=(state=newsinitialState,action)=>{
 
             
             case news.NEWS_FETCH_SUCCESS:
+          
                 return{
                     ...state,
                     newsloading:false,
-                    newsdata:action.payload,
+                    newsdata: state.newsdata.concat(action.payload),
                     newserr:""
                 }
               
