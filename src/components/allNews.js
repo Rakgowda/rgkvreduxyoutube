@@ -10,25 +10,19 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
-const useStyles = makeStyles(theme => ({
+import { spacing } from '@material-ui/system';
+const useStyles = makeStyles({
   card: {
-    display: 'flex',
-    margin:"5px"
+    maxWidth: 345,
+    marginBottom:5
   },
-  details: {
-    display: 'flex',
-    flexDirection: 'column',
+  media: {
+    height: 140,
   },
- 
-  cover: {
-    width: "300px",
-    height: "120px",
-
-    
-  },
-
- 
-}));
+});
+const theme = {
+  spacing: 8,
+}
  function AllNews(){
     const classes = useStyles();
     const newsstate = useSelector(state=>state.newsreducer)
@@ -40,23 +34,25 @@ const useStyles = makeStyles(theme => ({
   
  return newsstate.newsloading?(<h1>loading</h1>):newsstate.newserr?(<h1>"error"</h1>):<div>{console.log(newsstate.newsdata)} {newsstate.newsdata["articles"].map(resultNews=>(
     
-<Container maxWidth="sm">
-<Card className={classes.card}>
-      <CardMedia
-  className={classes.cover}
-  image={resultNews.urlToImage}
-  title={resultNews.title}
-/>
-  <div className={classes.details}>
-    <CardContent className={classes.content}>
-      <Typography component="p" variant="p">
-      {resultNews.title}
-      </Typography>
+<Container maxWidth="lg">
+<Card className={classes.card} mb={5}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          alt="Contemplative Reptile"
+          height="140"
+          image={resultNews.urlToImage}
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            {resultNews.title}
+          </Typography>
+         
+        </CardContent>
+      </CardActionArea>
      
-    </CardContent>
-  </div>
- 
-</Card> 
+    </Card>
       </Container>
  
   
