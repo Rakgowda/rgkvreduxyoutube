@@ -42,6 +42,7 @@ const fetchNews = (category, page) => {
         console.log(news);
         if (news.length == 0) {
           dispatch(newsend());
+
         } else {
           dispatch(fetchnewsSucess(news));
         }
