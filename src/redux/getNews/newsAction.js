@@ -39,10 +39,11 @@ const fetchNews = (category, page) => {
       )
       .then(response => {
         const news = response.data["articles"];
+        console.log(news.length)
         console.log(news);
         if (news.length == 0) {
+          console.log("0")
           dispatch(newsend());
-
         } else {
           dispatch(fetchnewsSucess(news));
         }
